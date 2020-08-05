@@ -72,18 +72,19 @@ class MovingAverageCrossAlgorithm(QCAlgorithm):
         if holdings <= 0:
             # if the fast is greater than the slow, we'll go long
             if self.fast.Current.Value > self.slow.Current.Value *(1 + tolerance):
-                self.Log("BUY  >> {0}".format(self.Securities[Ticker].Price))
-                self.Log("FAST EMA >> {}".format(self.fast.Current.Value))
-                self.Log("SLOW EMA >> {}".format(self.slow.Current.Value))
+                self.Log("BUY: {0}".format(self.Securities[Ticker].Price))
+                self.Log("FAST EMA: {1}".format(self.fast.Current.Value))
+                self.Log("MID EMA: {1}".format(self.middle.Current.Value))
+                self.Log("SLOW EMA: {1}".format(self.slow.Current.Value))
                 self.SetHoldings(Ticker, 1.0)
 
         # we only want to liquidate if we're currently long
         # if the fast is less than the slow we'll liquidate our long
         if holdings > 0 and self.fast.Current.Value < self.middle.Current.Value:
-            self.Log("SELL >> {0}".format(self.Securities[Ticker].Price))
-            self.Log("FAST EMA >> {}".format(self.fast.Current.Value))
-            self.Log("MID EMA >> {}".format(self.middle.Current.Value))
-            self.Log("SLOW EMA >> {}".format(self.slow.Current.Value))
+            self.Log("SELL: {0}".format(self.Securities[Ticker].Price))
+            self.Log("FAST EMA: {1}".format(self.fast.Current.Value))
+            self.Log("MID EMA: {1}".format(self.middle.Current.Value))
+            self.Log("SLOW EMA: {1}".format(self.slow.Current.Value))
             self.Liquidate(Ticker)
             self.Flag = "WAIT"
             self.SellDay = self.Days
