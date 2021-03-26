@@ -20,6 +20,6 @@ The second strategy tracks 2 Assets at once. For both Assets (in this case ETH a
 
 This strategy will work great for Assets which are (somewhat) negatively correlated to each other. Like the normal Dual Moving Average Strategy (1), it will fail if there is too much sideways movement in the Asset Prices. 
 
-The perfomance of the strategy can be seen below (2017-2021). 
+The perfomance of the strategy can be seen below (2017-2021). It does not perform as well as the first strategey. This is mainly due to the strategy jumping around when to invest in BTC and when ETH and doing wrong and inefficient trades.
 
 ![alt text](https://raw.githubusercontent.com/feljost/QC-TradingAlgorithms/master/Screenshots/ETH%2BBTC_Dual_Crypto_Strategy_Perfomance.png)
