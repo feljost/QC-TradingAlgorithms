@@ -4,6 +4,9 @@ QuantConnect Trading Algorithms created as a fun project. If you want to run the
 
 Two Trading Strategies are in this Repository:
 
+1. Dual Moving Average Strategy
+2. ETH - BTC Relative Difference Dual Moving Average
+
 ### 1) Dual Moving Average Strategy
 
 The dual moving average strategy is a simple trading strategy where we calculate 2 Exponential Moving Averages with two different windows. The Short Exponential Moving Average uses a window of 50 days, and the Long Moving Average uses a window of 200 days. If the Short Moving Average crosses the Long Moving Average from below, it indicates we are on an upward swing and will place a buy order. If the Short Moving Average crosses the Long moving Average from above, it indicates that we are on a downward swing and will place a sell order if we are long. Shorting is not a part of this strategy.
