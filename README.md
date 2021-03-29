@@ -2,10 +2,10 @@
 
 QuantConnect Trading Algorithms created as a fun project. If you want to run these scripts you will have to use the QuantConnect IDE which is available within your browser for free. Depending on how you want to use the Script, some adjustments might be necessary.
 
-Two Trading Strategies are in this Repository:
-
+## Table of Contents:
 1. Dual Moving Average Strategy
 2. ETH - BTC Relative Difference Dual Moving Average
+3. Crypto Bandwagon Strategy (WIP)
 
 ### 1) Dual Moving Average Strategy
 
