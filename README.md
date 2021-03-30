@@ -31,11 +31,14 @@ The perfomance of the strategy can be seen below (2017-2021). It does not perfor
 
 This strategy is inspired by the Crypto Bandwagon: http://thecryptobandwagon.com/. The Crypto Bandwagon Strategy invests into 3 cryptos each week, based on their previous 7-day performance compared to $USD. At the end of each week, 3 new cryptos are chosen (based on returns of last week) and the cycle is restarted.
 
-Why does this work? Cryptocurrencies are often "Hype-Driven" and therefore people seem to be influenced by last week's returns. As such, it is possible to jump on the 'bandwagon' and (hopefully) jump off again before it is to late. For my Initial testing I took 11 popular cryptos on BitFinex as possible choices. Including all possibilities unfortunately breaks the strategy, as we get returns of +33m USD in one week, and then lose all in the next week. It does outperform buying and holding bitcoin for the same time period.
+Why does this work? Cryptocurrencies are often "Hype-Driven" and therefore people seem to be influenced by last week's returns. As such, it is possible to jump on the 'bandwagon' and (hopefully) jump off again before the price drops. This is based on the Autocorrelation of Cryptos (with 1 week lag) being positive, due to The Greater Fool Theory and Momentum Investing
+
+For my initial testing I took 11 popular cryptos on BitFinex as possible choices. Including all possibilities unfortunately breaks the strategy, as we get returns of +33m USD in one week, and then lose all in the next week. As such, the Strategy chooses the top 3 out of the 11 most popular Crypto-USD Pairings on BitFinex. It does outperform buying and holding bitcoin for the same time period.
 
 The perfomance of the strategy can be seen below (2019.06-2019.12). 
 
 ![alt text](https://raw.githubusercontent.com/feljost/QC-TradingAlgorithms/master/Screenshots/BandWagon_Strategy_Perfomance.png)
 
-While it does Perform extraordinarily well, there are some bugs in the code which still must be fixed and which will improve the performance. Namely sometimes the strategy isn't "quick enough" to use the QuantConnect command "SetHoldings" and therefore it tries to buy bigger quantities than the account actually has. This still has to be fixed. Another major drawback is the amount of trades which are done each week. Each trade accumulates fees and therefore this strategy is quite fee heavy. 
-Additionally, one could play around with stoploss orders (like the original strategy) or trailing stoploss orders.
+While it does Perform extraordinarily well, there are some bugs in the code which still must be fixed and might improve performance. Namely, in some cases the strategy isn't "quick enough" to use the QuantConnect command "SetHoldings" and therefore it tries to buy bigger quantities than the account actually has, as the price of the asset seems to fluctuate between getting the Price Data and setting the Buy Command. 
+
+A major drawback is the amount of trades which are done each week. Each trade accumulates fees and therefore this strategy is quite fee heavy. Further experimentation and possible improvements could be made with stoploss orders (like the original strategy) or trailing stoploss orders.
