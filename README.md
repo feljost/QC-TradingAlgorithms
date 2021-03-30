@@ -21,9 +21,9 @@ To improve this strategy the next step would be to identify what kind of assets 
 
 ### 2) ETH - BTC Relative Difference Dual Moving Average 
 
-The second strategy tracks 2 assets at once. For both assets (in this case ETH and BTC), the dual moving average strategy (described above) is applied, however, we also calculate how much the dual moving averages are apart from each other. If the two moving averages (for each respective asset) are far apart from each other, it indicates that the upward or downward trend seems to be of large magnitude. The strategy invests the money in the asset with the biggest positive difference between Short MA and Long MA. Intuitively, the script invests in the Asset which is going up the most.
+The second strategy tracks 2 assets at once. For both assets (in this case ETH and BTC), the dual moving average strategy (described above) is applied, however, we also calculate how much the dual moving averages are apart from each other. If the two moving averages (for each respective asset) are far apart from each other, it indicates that the upward or downward trend seems to be of large magnitude. The strategy invests the money in the asset with the biggest positive difference between Short MA and Long MA. Intuitively, the script invests in the asset which is going up the most.
 
-This strategy will work great for Assets that are negatively correlated to each other. Like the normal Dual Moving Average Strategy (1), it will fail if there is too much sideways movement in the Asset Prices. 
+This strategy will work great for assets that are negatively correlated to each other. Like the normal Dual Moving Average Strategy (1), it will fail if there is too much sideways movement in the asset Prices. 
 
 The performance of the strategy can be seen below (2017-2021). It does not perform as well as the first strategy. This is mainly due to the strategy jumping around when to invest in BTC and when ETH and doing wrong and inefficient trades, and ETH and BTC being positively correlated.
 
