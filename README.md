@@ -9,9 +9,9 @@ In this repository, you will find Trading Algorithms that have been developed on
 
 ### 1) Dual Moving Average Strategy
 
-The dual moving average strategy is a simple trading strategy where we calculate 2 Exponential Moving Averages with two different windows. The Short Exponential Moving Average uses a window of 50 days, and the Long Moving Average uses a window of 200 days. If the Short Moving Average crosses the Long Moving Average from below, it indicates we are on an upward swing and will place a buy order. If the Short Moving Average crosses the Long moving Average from above, it indicates that we are on a downward swing and will place a sell order if we are long. Shorting is not a part of this strategy.
+The dual moving average strategy is a simple trading strategy where we calculate 2 exponential moving averages (EMA) with two different windows. The short EMA uses a window of 50 days, and the long EMA uses a window of 200 days. If the short EMA crosses the long EMA from below, it indicates we are on an upward swing and will place a buy order. If the short EMA crosses the Long moving Average from above, it indicates that we are on a downward swing and will place a sell order if we are long. Shorting is not a part of this strategy.
 
-The performance of the strategy can be seen below (2015-2021). For the BTC-USD pair, it outperforms the buy and hold strategy. This specifically because it sells before the major downswing in April 2018 to April 2019.
+The performance of the strategy can be seen below (2015-2021). For the BTC-USD pair, it outperforms the buy and hold strategy. This works specifically well because it sells before the major downswing in April 2018 to April 2019.
 
 ![alt text](https://raw.githubusercontent.com/feljost/QC-TradingAlgorithms/master/Screenshots/BTCUSD_Single_Crypto_Strategy_Perfomance.png)
 
@@ -21,7 +21,7 @@ To improve this strategy the next step would be to identify what kind of assets 
 
 ### 2) ETH - BTC Relative Difference Dual Moving Average 
 
-The second strategy tracks 2 assets at once. For both assets (in this case ETH and BTC), the dual moving average strategy (described above) is applied, however, we also calculate how much the dual moving averages are apart from each other. If the two moving averages (for each respective asset) are far apart from each other, it indicates that the upward or downward trend seems to be of large magnitude. The strategy invests the money in the asset with the biggest positive difference between Short MA and Long MA. Intuitively, the script invests in the asset which is going up the most.
+The second strategy tracks 2 assets at once. For both assets (in this case ETH and BTC), the dual moving average strategy (described above) is applied, however, we also calculate how much the dual moving averages are apart from each other. If the two moving averages (for each respective asset) are far apart from each other, it indicates that the upward or downward trend seems to be of large magnitude. The strategy invests the money in the asset with the biggest positive difference between short EMA and long EMA. Intuitively, the script invests in the asset which is going up the most.
 
 This strategy will work great for assets that are negatively correlated to each other. Like the normal Dual Moving Average Strategy (1), it will fail if there is too much sideways movement in the asset Prices. 
 
@@ -41,6 +41,6 @@ The performance of the strategy can be seen below (2019.06-2019.12).
 
 ![alt text](https://raw.githubusercontent.com/feljost/QC-TradingAlgorithms/master/Screenshots/BandWagon_Strategy_Perfomance.png)
 
-While it does Perform extraordinarily well, there are some bugs in the code that still must be fixed and might improve performance. Namely, in some cases, the strategy isn't "quick enough" to use the QuantConnect command "SetHoldings" and therefore it tries to buy bigger quantities than the account has, as the price of the asset seems to fluctuate between getting the price data and issuing the buy order. 
+While it does perform extraordinarily well, there are some bugs in the code that still must be fixed and might improve performance. Namely, in some cases, the strategy isn't "quick enough" to use the QuantConnect command "SetHoldings" and therefore it tries to buy bigger quantities than the account has, as the price of the asset seems to fluctuate between getting the price data and issuing the buy order. 
 
 A major drawback is the number of trades which are done each week. Each trade accumulates fees and therefore this strategy is quite fee heavy. Further experimentation and possible improvements could be made with stop-loss orders (like the original strategy) or trailing stop-loss orders.
